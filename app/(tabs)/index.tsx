@@ -24,7 +24,12 @@ export default function Index() {
         loading : moviesLoading,
         error : moviesError,
     } = useFetch(() => fetchMovies({query : ""}))
+    // console.log(movies)
 
+
+    const handleMovieCard = () =>{
+        console.log("Clicked")
+    }
 
     return (
     <View className="flex-1 bg-primary ">
@@ -49,21 +54,23 @@ export default function Index() {
                             placeholder="Search For a Movie"
                         />
                         <>
-                            <Text className="text-lg text-white">Latest Movies</Text>
+                            <Text className="text-lg text-white font-bold">Latest Movies</Text>
                             <FlatList data={movies}
+
                                       renderItem={({ item }) => (
                                           <MovieCard item={item}/>
                                       )}
                                       keyExtractor={(item) => item.id.toString()}
-                                      numColumns={3}
-                                      scrollEnabled={false}
-                                      columnWrapperStyle={{
-                                          justifyContent: 'flex-start',
-                                          gap : 20,
-                                          paddingRight : 5,
-                                          marginBottom : 10
-                                      }}
+                                      // numColumns={2}
+                                      scrollEnabled={true}
+                                      // columnWrapperStyle={{
+                                      //     justifyContent: 'flex-start',
+                                      //     gap : 20,
+                                      //     paddingRight : 5,
+                                      //     marginBottom : 10
+                                      // }}
                                       className="mt-2 pb-32"
+                                      horizontal={true}
                             />
                         </>
                     </View>
