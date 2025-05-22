@@ -27,10 +27,6 @@ export default function Index() {
     // console.log(movies)
 
 
-    const handleMovieCard = () =>{
-        console.log("Clicked")
-    }
-
     return (
     <View className="flex-1 bg-primary ">
         <Image source={images.bg} className="w-full absolute z-0" />
@@ -71,13 +67,11 @@ export default function Index() {
                                       // }}
                                       className="mt-2 pb-32"
                                       horizontal={true}
+                                      showsHorizontalScrollIndicator={false}
                             />
                         </>
                     </View>
                 )}
-
-
-
             </View>
         </ScrollView>
     </View>
